@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	
+	<script src="calcs.js"></script>
+	<meta charset="utf-8">
+	<title>BP calculator</title>
+
+</head>
+
+<body>
+<center>
+	<h1>Dead By Daylight Blood Point Calculator</h1>
+	<img src="http://www.deadbydaylight.com/images/logo_dbd.png" alt="DBD Logo">
+	<br><br>
+		
+		
+	<div>
+	<form>
+  	Current level:<br>
+  <input type="text" id="current" name="current" pattern="[0-9]{10}"><br><br>
+  Target level:<br>
+  <input type="text" id="goal" name="goal" pattern="[0-9]{10}">
+	</form>
+		<p>BPs until target level:</p>
+		<p id="bpValue">0</p>
+	</div>
+</center>
+	
+</body>
+
+<footer>
+	<script>
+		var input = document.getElementById("current");
+		var input2 = document.getElementById("goal");
+		var bps = document.getElementById("bpValue");
+		input.addEventListener('keyup',function(){
+			bps.innerHTML = bpsUntilLevel(input.value, input2.value)
+		});
+		input2.addEventListener('keyup',function(){
+			bps.innerHTML = bpsUntilLevel(input.value, input2.value);
+		});
+	</script>	
+</footer>
+</html>
