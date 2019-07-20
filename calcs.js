@@ -1,4 +1,4 @@
-var moneyPerLevel = [5*4000, 7 * 4000, 10*4000, 15 * 4000, 20 * 4000, 30 * 4000];
+var moneyPerLevel = [5*4000, 7 * 4000, 9*4000, 10 * 4000, 13 * 4000, 20 * 4000];
 
 function bpsUntilLevel(current, goal) {
 	var total = 0;
