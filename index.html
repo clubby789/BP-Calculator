@@ -20,9 +20,9 @@
 	<div>
 	<form>
   	Current level:<br>
-  <input type="text" id="current" name="current" pattern="[0-9]{10}"><br><br>
+  <input type="number" id="current" name="current" ><br><br>
   Target level:<br>
-  <input type="text" id="goal" name="goal" pattern="[0-9]{10}">
+  <input type="number" id="goal" name="goal">
 	</form>
 		<p>BPs until target level:</p>
 		<p id="bpValue">0</p>
@@ -37,11 +37,15 @@
 		var input2 = document.getElementById("goal");
 		var bps = document.getElementById("bpValue");
 		input.addEventListener('keyup',function(){
-			bps.innerHTML = bpsUntilLevel(parseInt(input.value,10), parseInt(input2.value,10))
+			bps.innerHTML = bpsUntilLevel(parseInt(input.value,10), parseInt(input2.value,10)).toLocaleString()
 		});
 		input2.addEventListener('keyup',function(){
-			bps.innerHTML = bpsUntilLevel(parseInt(input.value,10), parseInt(input2.value,10))
+			bps.innerHTML = bpsUntilLevel(parseInt(input.value,10), parseInt(input2.value,10)).toLocaleString()
 		});
+		document.addEventListener('mouseup',function(){
+    		bps.innerHTML = bpsUntilLevel(parseInt(input.value,10), parseInt(input2.value,10)).toLocaleString()
+		});
+
 	</script>	
 </footer>
 </html>
