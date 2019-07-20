@@ -37,10 +37,10 @@
 		var input2 = document.getElementById("goal");
 		var bps = document.getElementById("bpValue");
 		input.addEventListener('keyup',function(){
-			bps.innerHTML = bpsUntilLevel(input.value, input2.value)
+			bps.innerHTML = bpsUntilLevel(parseInt(input.value,10), parseInt(input2.value,10))
 		});
 		input2.addEventListener('keyup',function(){
-			bps.innerHTML = bpsUntilLevel(input.value, input2.value);
+			bps.innerHTML = bpsUntilLevel(parseInt(input.value,10), parseInt(input2.value,10))
 		});
 	</script>	
 </footer>
