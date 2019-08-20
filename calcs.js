@@ -1,14 +1,16 @@
-var moneyPerLevel = [5*4000, 7 * 4000, 9*4000, 10 * 4000, 13 * 4000, 20 * 4000];
+const moneyPerLevel = [5*4000, 7*4000, 9*4000, 10*4000, 13*4000, 20*4000];
 
-function bpsUntilLevel(current, goal) {
-	var total = 0;
-	for (var counter = current; counter < goal; counter++) {
-		total += bpsToNextLevel(counter);
+// Calculates the bps until you reach a certain level
+bpsUntilLevel = (current, goal) => {
+	let total = 0;
+	for (let i = current; i < goal; i++) {
+		total += bpsToNextLevel(i);
 	}
 	return total;
 }
 
-function bpsToNextLevel(current) {
-	var levelGroup = Math.floor(current/10);
+// Calculates the bps until the next level
+bpsToNextLevel = current => {
+	let levelGroup = Math.floor(current/10);
 	return moneyPerLevel[levelGroup];
 }
